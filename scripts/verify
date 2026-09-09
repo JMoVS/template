@@ -1,0 +1,4 @@
+#!/bin/sh
+# Replace this sentinel with real project checks. Preserve nonzero failures.
+printf '%s\n' 'NOT CONFIGURED: add the project verification commands to scripts/verify.' >&2
+exit 2
