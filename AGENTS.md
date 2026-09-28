@@ -10,6 +10,7 @@ Read this file and `docs/project.md` before changing the project. Read the assig
 - A proposed ADR is not authorization. Use the project's named decision owner to accept it.
 - Flag contradictions with accepted decisions. Do not silently implement a different design.
 - Preserve the reasoning and history of accepted decisions; record substantive changes as amendments or superseding decisions.
+- ADRs cite only durable in-repository records: decision and obligation IDs, requirement IDs, evidence-record IDs, commit IDs, and repository paths. Never issue or pull-request numbers, forge URLs, or work-queue IDs: issue text is revised in place, and forge numbers do not survive a migration. Work items and pull requests cite ADRs; an ADR states its own deferrals.
 
 ## Roles and delegation
 
@@ -27,17 +28,17 @@ Read this file and `docs/project.md` before changing the project. Read the assig
 - Preserve user work. Do not reset or clean a shared checkout. Run mutation experiments in a disposable isolated copy.
 - Keep refactoring separate from behavior changes where practical. Prefer small changes with observable effects.
 - Use types, constructors, exhaustive handling, and compiler checks to constrain invalid states when the language supports them.
-- Compiler diagnostics help find static consumers; dynamic calls, reflection, generated code, and runtime configuration need additional investigation. Search results alone do not establish completeness.
+- Compiler diagnostics help find static consumers; dynamic calls, reflection, generated code, and runtime configuration need additional investigation. Search results alone do not establish completeness, and neither does one build's error list: build tools stop scheduling work after early failures, and a later use in the same scope stays silent behind an earlier error. For a complete census, type-check every target, including test targets, and iterate until zero errors remain.
 - Run checks from the intended checkout. Record commands, environment, tested revision or worktree state, counts, skips, failures, and incomplete runs.
-- An exit code of zero or the word 'passed' is insufficient if no relevant tests ran. For consequential logic, demonstrate that a relevant test detects a representative defect.
+- An exit code of zero or the word 'passed' is insufficient if no relevant tests ran. For consequential logic, demonstrate that a relevant test detects a representative defect. A named check needs its own mutation to make that check fail; some other test failing does not show the named one measures anything.
 - Independent review addresses requirements and actual behavior. Model identity and a green build do not replace evidence.
 
 ## Completion
 
 - Before handing off, compare the complete scope with the diff and evidence. Partial implementation leaves remaining work open.
-- Update affected ADR obligation rows, the work item, and the active plan in the same candidate change where possible.
+- Update the work item, the active plan, and, when the change alters it, the affected ADR's implementation line in the same candidate change as the code.
 - Distinguish implemented on a branch, integrated into the target branch, and released or deployed. Use 'shipped' only with the project's configured definition.
-- Never fabricate commit IDs or future merge results. A commit cannot contain its own final hash; attach that evidence after integration or derive it from Git/forge history.
+- Never fabricate commit IDs or future merge results. A commit cannot contain its own final hash, and a change cannot cite its own merge commit. Do not write implementation history into ADRs; derive it from Git/forge history.
 - Pending reviews, unavailable platform checks, and stale evidence stay explicit. Do not present them as passed.
 
 ## Continuity and communication

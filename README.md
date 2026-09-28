@@ -22,7 +22,7 @@ Use this as a normal repository with a working tree. Git's `--bare` repository m
 | [AGENTS.md](AGENTS.md) | Shared working contract |
 | [Roles](docs/roles/README.md) | Architect, platform expert, implementer, reviewer |
 | [Workflow](docs/workflow.md) | Worktrees, handoffs, offline work, completion |
-| [ADRs](docs/adr/README.md) | Decision lifecycle and implementation obligations |
+| [ADRs](docs/adr/README.md) | Decision lifecycle, obligations, implementation line, what an ADR may cite |
 | [Templates](templates/README.md) | Copyable records and delegation briefs |
 | [Model policy](docs/model-policy.md) | Optional capability and review expectations |
 | [Harness adapters](docs/harnesses.md) | Shared rules with thin tool-specific entry points |
