@@ -1,6 +1,7 @@
 # ADR-NNNN — Decision title
 
 Decision status: Proposed
+Implementation: open (open | partial | partial-closed | complete)
 Date: YYYY-MM-DD
 Accepted by / date: pending
 Requirements: REQ-...
@@ -16,12 +17,12 @@ Chosen approach, boundaries, and why it satisfies the requirements.
 
 ## Alternatives and consequences
 
-Real alternatives; reasons rejected; benefits, costs, failure modes, and deferrals.
+Every alternative actually weighed and why it lost; benefits, costs, failure modes, and deferrals.
 
-## Delivery obligations
+## Obligations
 
-| Obligation | Observable acceptance condition | Implementation state | Remaining work | Implementation / test evidence | Integration / release evidence |
-| --- | --- | --- | --- | --- | --- |
-| O-1 | TODO | not started | WL-...; later durable record | none | none |
+| Obligation | Observable acceptance condition |
+| --- | --- |
+| O-1 | TODO |
 
-An accepted decision may have open obligations. Update evidence as it becomes available; never insert an invented future commit hash.
+The implementing change updates the Implementation line in the same diff as the code. Per-obligation evidence lives in tests and evidence records that cite these IDs; work items cite them too. Cite only durable in-repository records in this file: no issue, pull-request, or work-queue IDs, and never an invented future commit hash.

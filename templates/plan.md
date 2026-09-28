@@ -19,4 +19,4 @@ Design gaps, blockers, remaining scope, and offline updates awaiting reconciliat
 
 ## Completion
 
-Scope satisfied? ADR obligations updated? Review complete? Integration/release evidence known? Record pending states explicitly. Archive according to the project's completion rule.
+Scope satisfied? ADR implementation line updated? Review complete? Integration/release evidence known? Record pending states explicitly. Archive according to the project's completion rule.

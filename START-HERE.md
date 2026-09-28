@@ -18,7 +18,7 @@ Replace the location before sending. If you share only the single Markdown editi
 | One work queue | Tasks drift among files, plans, and issues | Keep the project's existing authoritative queue |
 | Bounded role briefs | Delegation loses scope, context, or ownership | Clear implementer and independent reviewer assignments |
 | Plans and evidence | Long sessions lose remaining work and verification context | One active plan only when needed |
-| Completion accounting | Accepted decisions are mistaken for delivered behavior | Per-obligation state and actual integration evidence |
+| Completion accounting | Accepted decisions are mistaken for delivered behavior | One implementation-state line per ADR; evidence in tests and Git history |
 
 The architect and platform expert are available when needed. Model categories, multiple reviewers, validators, and forge automation are optional extensions. Do not install every mechanism just because the scaffold describes it.
 
@@ -42,7 +42,7 @@ Default first adoption: a short shared contract and one real scoped work item. K
 
 - Merge useful guidance into existing instructions. Preserve precedence and local rules; keep one canonical version of each rule. If splitting shared rules into AGENTS.md, preserve existing harness loading behavior and check it explicitly.
 - Reuse existing document directories and IDs. Create missing records only where useful. Do not mass-rewrite accepted ADRs or retroactively claim they shipped.
-- For an initial traceability pilot, inspect one active item and its relevant ADR obligations. Link verified implementation and remaining work; label unknown status. Put a broader audit in the existing queue if needed.
+- For an initial traceability pilot, inspect one active item and its relevant ADR obligations. Set that ADR's implementation line from verified code and tests, leave unknown as unknown, and have the work item cite the obligations it covers. Put a broader audit in the existing queue if needed.
 - For a fresh repo, the coordinator may configure the starter directly in the initial directory, without concurrent modifying agents. Establish Git history under the user's authorization before delegating work that requires separate worktrees. Use templates with real project values; keep fictional examples outside the active queue.
 - Preserve real build/test commands. The provided scripts/verify is an intentionally failing sentinel for an unconfigured fresh project: never replace working verification with it. Wrap existing commands only when useful and preserve their failure status.
 - Keep one authoritative queue. If an issue tracker exists, use it rather than adding a second active BACKLOG.md. Store offline scope snapshots and execution notes with explicit pending reconciliation.
@@ -65,7 +65,7 @@ Report the resulting files and conventions, the first item's handoff, what was v
 
 - A new agent can find the authoritative queue, project commands, and applicable decisions.
 - One real pending item has clear scope and acceptance, plus a usable brief if delegated.
-- Completion evidence has a defined home; if ADRs are used, remaining obligations do too.
+- Completion evidence has a defined home; if ADRs are used, each carries an implementation line, and its remaining obligations have work items that cite them.
 - Existing instruction loading and verification still work, or unavailable checks are explicit.
 - Optional future machinery is visibly deferred rather than implied to exist.
 

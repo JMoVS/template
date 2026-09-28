@@ -14,7 +14,7 @@ Candidate state, relevant check results, environment limits, and independent rev
 ## Completion accounting
 
 Work item and plan state: ...
-ADR obligation updates: ...
+ADR implementation line: changed (from → to, and why) or unchanged. ADR text cites no issue, pull-request, or work IDs.
 Integration/release evidence: pending until that event exists.
 
 Use the chosen forge's automatic issue-closing syntax only when the issue's full scope will be complete under the configured rule.
